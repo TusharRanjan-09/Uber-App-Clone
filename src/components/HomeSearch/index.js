@@ -1,41 +1,36 @@
 import React from "react";
-import { View, Text, Pressable,StyleSheet } from "react-native";
+import { View, Text, Pressable,StyleSheet,TouchableOpacity } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Entypo from "react-native-vector-icons/Entypo";
-// import {useNavigation} from '@react-navigation/native'
+import {useNavigation} from '@react-navigation/native'
 const HomeSearch = (props) => {
-//   const navigation = useNavigation();
-//   const goToSearch = () => {
-//     navigation.navigate('DestinationSearch')
-//   }
+  const navigation = useNavigation();
   return (
     <View>
-      {/*  Input Box */}
-      <Pressable  style={styles.inputBox}>
+      <TouchableOpacity  style={styles.inputBox}
+     onPress={()=> navigation.navigate('Destination')}
+      >
         <Text style={styles.inputText}>Where To?</Text>
-
         <View style={styles.timeContainer}>
           <AntDesign name={'clockcircle'} size={16} color={'#535353'} />
           <Text>Now</Text>
           <MaterialIcons name={'keyboard-arrow-down'} size={16} />
         </View>
-      </Pressable>
-
-      {/* Previous destination */}
+      </TouchableOpacity>     
       <View style={styles.row}>
         <View style={styles.iconContainer}>
           <AntDesign name={'clockcircle'} size={20} color={'#ffffff'} />
         </View>
-        <Text style={styles.destinationText}>Spin Nightclub</Text>
+        <Text style={styles.destinationText}>Huda City Center Metro</Text>
       </View>
 
-      {/* Home destination */}
+     
       <View style={styles.row}>
         <View style={[styles.iconContainer, {backgroundColor: '#218cff'}]}>
           <Entypo name={'home'} size={20} color={'#ffffff'} />
         </View>
-        <Text style={styles.destinationText}>Spin Nightclub</Text>
+        <Text style={styles.destinationText}>Gurgaon, Haryana</Text>
       </View>
     </View>
   );
