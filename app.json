@@ -1,0 +1,12 @@
+{
+  "name": "view",
+  "displayName": "view",
+  "expo": {
+    "name": "view",
+    "slug": "view",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
